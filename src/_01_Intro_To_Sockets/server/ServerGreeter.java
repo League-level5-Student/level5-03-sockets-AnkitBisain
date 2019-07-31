@@ -34,7 +34,6 @@ public class ServerGreeter extends Thread {
 				// The program will wait her until either a client connects or the timeout
 				// expires.
 				Socket soc = s.accept();
-
 				// 10. Let the user know that the client has connected.
 				System.out.println("client has connected");
 				// 11. Create a DataInputStream object. When initializing it, use the Socket
@@ -42,7 +41,8 @@ public class ServerGreeter extends Thread {
 				DataInputStream inpStm = new DataInputStream(soc.getInputStream());
 				// 12. Print the message from the DataInputStream object using the readUTF()
 				// method
-				inpStm.readUTF();
+				System.out.println(inpStm.readUTF());
+
 				// 13. Create a DataOutputStream object. When initializing it, use the Server
 				// object you created in step 9 to call the getOutputStream() method.
 				DataOutputStream outStm = new DataOutputStream(soc.getOutputStream());
@@ -53,6 +53,7 @@ public class ServerGreeter extends Thread {
 				s.close();
 			} catch (IOException e) {
 				// TODO: handle exception
+				e.printStackTrace();
 				System.out.println("Exception");
 				b = false;
 			}
@@ -62,6 +63,7 @@ public class ServerGreeter extends Thread {
 
 			// 7. If the program catches a IOException, let the user know about it and set
 			// the loop's boolean variable to false.
+			b = false;
 		}
 
 	}

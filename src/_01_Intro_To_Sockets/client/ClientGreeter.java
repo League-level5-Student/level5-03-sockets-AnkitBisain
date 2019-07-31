@@ -9,7 +9,7 @@ public class ClientGreeter {
 		// 1. Create a String for the ip address of the server.
 		// If you don't know how to find a computer's ip address, ask about ifconfig on
 		// linux/mac and ipconfig on windows.
-		String ipAddress =  "192.168.7.223";
+		String ipAddress =  "192.168.7.145";
 		
 		// 2. Create an integer for the server's port number
 		int portNumb = 8080;
